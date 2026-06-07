@@ -1,0 +1,25 @@
+{
+  "name": "com.pixygon.actors",
+  "version": "0.1.0",
+  "displayName": "Pixygon - Actors",
+  "description": "Base for ALL living entities (players, NPCs, enemies, animas) — the 'Pixiel skeleton + brain'. Engine-portable core (ActorCore + IActorBrain) + a thin Unity adapter (Actor MonoBehaviour, ActorDefinition). Humanoids add an Avatar body; creatures add an Anima body. Carries a StatBlock from com.pixygon.stats.",
+  "unity": "2023.2",
+  "unityRelease": "14f1",
+  "documentationUrl": "https://www.pixygon.io/dev",
+  "dependencies": {
+    "com.pixygon.idsystem": "0.5.0",
+    "com.pixygon.stats": "0.1.0"
+  },
+  "hideInEditor": false,
+  "keywords": [
+    "Pixygon",
+    "Actors",
+    "Characters",
+    "Tool"
+  ],
+  "author": {
+    "name": "Pixygon",
+    "email": "pixygon@pixygon.io",
+    "url": "https://www.pixygon.io"
+  }
+}
