@@ -21,6 +21,7 @@ namespace Pixygon.Actors {
         public event Action<ActorCore, DamageInfo> Damaged;
         public event Action<ActorCore, float> Healed;
         public event Action<ActorCore> Died;
+        public event Action<ActorCore> Revived;
 
         public ActorCore(StatBlock stats) {
             Stats = stats ?? new StatBlock();
@@ -62,6 +63,14 @@ namespace Pixygon.Actors {
             var hp = Stats.Get(Stat.Health);
             if (hp != null) hp.Current = 0f;
             Died?.Invoke(this);
+        }
+
+        /// <summary>Bring a Downed/Dead actor back to Alive. Vitals are NOT touched — the game
+        /// decides the revive HP (1 for a battlefield pickup, full for an inn) and sets it after.</summary>
+        public void Revive() {
+            if (State != ActorState.Dead && State != ActorState.Downed) return;
+            State = ActorState.Alive;
+            Revived?.Invoke(this);
         }
     }
 
